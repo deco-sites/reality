@@ -20,6 +20,8 @@ export interface Image {
   titleColor: string;
   title: string;
   text: string;
+  href?: string;
+  buttonText?: string;
 }
 
 export interface BigImage {
@@ -84,8 +86,17 @@ function Blog({ section }: Props) {
       {section.map(({ type }) => {
         switch (true) {
           case (type as Image).type === "Image": {
-            const { text, alignment, alt, img, titleColor, title, isBigImage } =
-              type as Image;
+            const {
+              text,
+              alignment,
+              alt,
+              img,
+              titleColor,
+              title,
+              isBigImage,
+              buttonText,
+              href,
+            } = type as Image;
             return (
               <div class="flex justify-center lg:justify-between gap-4 flex-wrap lg:flex-nowrap">
                 <div class="flex flex-col items-start justify-center gap-4 w-fit">
@@ -96,6 +107,15 @@ function Blog({ section }: Props) {
                     {title}
                   </h2>
                   <p>{text}</p>
+                  {buttonText && (
+                    <a
+                      class="text-white p-3 rounded-xl"
+                      style={{ backgroundColor: titleColor }}
+                      href={href}
+                    >
+                      {buttonText}
+                    </a>
+                  )}
                 </div>
                 <Image
                   src={img}
