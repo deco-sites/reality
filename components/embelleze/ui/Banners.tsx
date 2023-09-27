@@ -46,7 +46,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
 
   return (
     <a
-      href={`/s?q=${href}`}
+      href={href}
       class="relative h-fit max-h-[375px] overflow-y-hidden w-full"
     >
       <Picture preload={lcp}>
@@ -65,7 +65,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           height={340}
         />
         <img
-          class="object-cover w-full"
+          class="object-cover w-full h-max-[375px]"
           loading={lcp ? "eager" : "lazy"}
           src={desktop}
           alt={alt}
@@ -87,7 +87,9 @@ function Banners({ images, preload, interval, logo, alt, href }: Props) {
           class="absolute inset-1 flex h-fit justify-center z-10"
           href={href}
         >
+          <a href={href}>
           <Image src={logo} alt={alt} width={140} height={50} />
+          </a>
         </div>
       )}
 
