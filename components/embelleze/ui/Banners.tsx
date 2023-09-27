@@ -47,7 +47,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   return (
     <a
       href={href}
-      class="relative h-fit max-h-[375px] overflow-y-hidden w-full"
+      class="relative h-full overflow-y-hidden w-full"
     >
       <Picture preload={lcp}>
         <Source
@@ -65,7 +65,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           height={340}
         />
         <img
-          class="object-cover w-full h-max-[375px]"
+          class="object-cover w-full h-full"
           loading={lcp ? "eager" : "lazy"}
           src={desktop}
           alt={alt}
