@@ -54,7 +54,7 @@ function Questions({ title, description, sections, titleColor }: Props) {
         onClick={() => console.log(card.current?.offsetHeight)}
       >
         {sections?.map(({ awnser, question }, index) => (
-          <div class="flex justify-center items-center p-4 gap-4 flex-grow md:max-w-[45%] lg:w-[45%] lg:max-w-[50%] border rounded-lg min-h-[84px]">
+          <div class="flex justify-start items-center p-4 gap-4 flex-grow md:max-w-[45%] lg:w-[45%] lg:max-w-[50%] border rounded-lg min-h-[84px]">
             <span class="border rounded-full h-14 w-14 flex items-center justify-center">
               {index + 1}
             </span>
