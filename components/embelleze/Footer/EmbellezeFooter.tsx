@@ -15,12 +15,12 @@ export interface Props {
 
 export default function EmbellezeFooter({ text, imagens, logo }: Props) {
   return (
-    <div class="bg-primary flex items-center flex-col py-8 px-4">
+    <div class="bg-primary flex items-center flex-col py-8 px-4 gap-8">
       {logo?.image && (
         <img src={logo?.image} alt={logo?.description} width="250px" />
       )}
       {text?.map((text) => (
-        <p class="text-base-100 mt-4 text-center">
+        <p class="text-base-100 text-center">
           {text}
         </p>
       ))}
