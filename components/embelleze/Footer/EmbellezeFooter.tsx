@@ -27,8 +27,9 @@ export default function EmbellezeFooter({ text, imagens, logo }: Props) {
       <ul class="flex justify-evenly flex-wrap gap-4">
         {imagens?.map((item) => (
           <li>
-            <a href={item.link} target="_blank" rel="noopener noreferrer"></a>
-            <img src={item.image} alt={item.description} max-height="120px" />
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <img src={item.image} alt={item.description} max-height="120px" />
+            </a>
           </li>
         ))}
       </ul>
